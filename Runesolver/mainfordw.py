@@ -105,6 +105,13 @@ def solve_rune(g, p, target):
                 time.sleep(2.5)
                 attempts = 0
 
+def pausePressUnpause(p, time, key):
+    p.press("F4")
+    p.sleep(1)
+    p.press(key)
+    p.sleep(time)
+    p.press("F4")
+
 if __name__ == "__main__":
     c = interception()
     d = bind(c)

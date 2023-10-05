@@ -134,8 +134,10 @@ if __name__ == "__main__":
         else:
             currentTime = time.time()
             if (fma1 - time.time() <= 0):
-                p.press("1")
+                p.hold("1")
                 print("pressing fma1")
+                time.sleep(3000)
+                p.release("1")
                 fma1 = time.time() + 180
             # if (fma2 - time.time() <= 0):
             #     p.press("2")
