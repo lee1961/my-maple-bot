@@ -54,6 +54,12 @@ def bind(context):
 def function_alarm():
     playsound("alarm.mp3")
 
+def pausePressUnpause(p, time, key):
+    p.press("F4")
+    p.sleep(1)
+    p.press(key)
+    p.sleep(time)
+    p.press("F4")
 
 def solve_rune(g, p, target):
     attempts = 0
@@ -117,9 +123,9 @@ if __name__ == "__main__":
         currentTime = time.time()
         other_location = g.get_other_location()
 
-        fma1 = time.time() + 0
+        fma1 = time.time() + 5
         fma2 = time.time()
-        fma3 = time.time() + 45
+        fma3 = time.time() + 50
         summon1 = time.time()
 
 
@@ -136,7 +142,7 @@ if __name__ == "__main__":
             if (fma1 - time.time() <= 0):
                 p.hold("1")
                 print("pressing fma1")
-                time.sleep(3000)
+                time.sleep(3)
                 p.release("1")
                 fma1 = time.time() + 180
             # if (fma2 - time.time() <= 0):
